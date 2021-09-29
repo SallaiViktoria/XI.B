@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1632928980 source:d:\paros_matrix\main.cpp
+	<iostream>
+	<fstream>
+
