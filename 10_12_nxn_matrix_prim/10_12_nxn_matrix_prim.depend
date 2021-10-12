@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1634024268 source:d:\11.b\10_12_nxn_matrix_prim\main.cpp
+	<iostream>
+	<fstream>
+
