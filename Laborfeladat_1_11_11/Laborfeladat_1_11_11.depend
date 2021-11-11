@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1636616471 source:d:\11.b\laborfeladat_1_11_11\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<algorithm>
+
