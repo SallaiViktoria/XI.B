@@ -2,25 +2,26 @@
 
 using namespace std;
 
-void patrate (int n, int &x, int &y) {
-    for(x=2; x<n/2;x++) {
-        for(y=x+1;y<n/2;y++) {
-            if(x*x*y*y==n) {
-                return;
-            }
-        }
-    }
-    x=0;y=0;return;
-
-}
-
-
 int main()
 {
-    int x=1;
-    int y=1;
-    patrate(16,x,y);
-    cout<<x<<" ";
-    cout<<y;
+    int n;
+    cin >> n;
+    int a[n][n];
+
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            cin >> a[i][j];
+        }
+    }
+
+    for(int i=0;i<n;i++){
+            cout << endl;
+        for(int j=0;j<n-1;j++){
+            if(i<=j){
+                    a[i][j]=a[i][j+1];
+            }
+            cout << a[i][j] << " ";
+        }
+    }
     return 0;
 }
