@@ -1,77 +1,38 @@
 #include <iostream>
-#include <string>
 
 using namespace std;
 
 int main()
 {
-    string szo,szo2;
-    cout << "kerem a beolvasando szot";
-    getline (cin, szo);
-    int elofordul=0;
-    size_t hely;
-    hely = szo.find("r");
-    if (hely!= string::npos) {
-        szo.replace (hely, 1, "o");
-    }
-    while(hely!= string::npos) {
-        hely= szo.find ("r", hely+1);
-        if (hely!= string::npos) {
-            szo.replace (hely, 1, "o");
+    int i, j, m, n, s=0,a[100][100];
+    cout << "m=";
+    cin >>m;
+    cout << "n=";
+    cin >> n;
+    for(int i=1;i<=m;i++) {
+        for(j=1;j<=n;j++) {
+            cout<<"a["<<i<<"]["<<j<<"]=";
+            cin >> a;
         }
     }
-    hely = szo.find("m");
-    if (hely!= string::npos) {
-        szo.replace (hely, 1, "i");
-    }
-    while(hely!= string::npos) {
-        hely= szo.find ("m", hely+1);
-        if (hely!= string::npos) {
-            szo.replace (hely, 1, "i");
+    for(int i=0;i<=m;i++) {
+        a[i][0]=11;
+        a[i][n+1]=11;
+        for(int j=0;j<=n;j++) {
+            a[0][j]=11;
+            a[m+1][j]=11;
         }
     }
-     hely = szo.find("s");
-    if (hely!= string::npos) {
-        szo.replace (hely, 1, "o");
-    }
-    while(hely!= string::npos) {
-        hely= szo.find ("s", hely+1);
-        if (hely!= string::npos) {
-            szo.replace (hely, 1, "o");
+    for(i=1;i<=m;i++) {
+        for(j=1;j<=n;j++) {
+            int min=a[i-1][j];
+            if(a[i+1][j]<min) min=a[i+1][j];
+            if(a[i][j-1]<min) min=a[i][j-1];
+            if(a[i][j+1]<min) min=a[i][j+1];
+            if(a=[i][j]<min)
+                s=s+(min-a[i][j]);
         }
     }
-     hely = szo.find("p");
-    if (hely!= string::npos) {
-        szo.replace (hely, 1, "o");
-    }
-    while(hely!= string::npos) {
-        hely= szo.find ("p", hely+1);
-        if (hely!= string::npos) {
-            szo.replace (hely, 1, "o");
-        }
-    }
-     hely = szo.find("r");
-    if (hely!= string::npos) {
-        szo.replace (hely, 1, "o");
-    }
-    while(hely!= string::npos) {
-        hely= szo.find ("r", hely+1);
-        if (hely!= string::npos) {
-            szo.replace (hely, 1, "o");
-        }
-    }
-     hely = szo.find("t");
-    if (hely!= string::npos) {
-        szo.replace (hely, 1, "o");
-    }
-    while(hely!= string::npos) {
-        hely= szo.find ("t", hely+1);
-        if (hely!= string::npos) {
-            szo.replace (hely, 1, "o");
-        }
-    }
-    cout << szo << szo2 << endl;
-
-
+    cout<<s;
     return 0;
 }
